@@ -1,0 +1,27 @@
+{
+    "name": "klisl/laravel-comments",
+    "description": "Package for using comments in Laravel-5",
+	"type": "library",
+	"keywords": [
+        "laravel",
+        "comments"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sergey Klimenchuk",
+            "email": "ksl80@ukr.net",
+			"homepage": "https://github.com/klisl/laravel-comments",
+			"role": "Developer"
+        }
+    ],
+	"minimum-stability": "stable",
+	"require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+			"Klisl\\Comments\\": "src"
+        }
+    }
+}
