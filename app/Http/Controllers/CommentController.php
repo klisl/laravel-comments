@@ -36,8 +36,7 @@ class CommentController extends Controller
 			$data['name'] = (!empty($data['name'])) ? $data['name'] : $user->name;
 			$data['email'] = (!empty($data['email'])) ? $data['email'] : $user->email;								
 		}
-		
-		
+			
 		//Проверка
 		$validator = Validator::make($data,[
 			'post_id' => 'integer|required',
@@ -45,20 +44,12 @@ class CommentController extends Controller
 			'name' => 'required',
 			'email' => 'required|email',
 		]);
-//		/*
-//		 * Дополнительная проверка при выполнении условия.
-//		 * Для аутентифицированного пользователя можно не заполнять данные поля
-//		 */
-//		$validator->sometimes(['name','email'], 'required|max:255', function(){
-//			return !Auth::check();
-//		});
-		
+
 		
 		/*
 		 * Создаем объект для сохранения, передаем ему массив данных
 		 */
 		$comment = new Comment($data); 
-
 
 				
 		//Ошибки
@@ -89,8 +80,10 @@ class CommentController extends Controller
 		$comment->load('user');
 		$data['id'] = $comment->id;
 		$data['hash'] = md5($data['email']);
+		
 		//Вывод шаблона сохраняем в переменную
-		$view_comment = view(env('THEME').'.new_comment')->with('data', $data)->render();
+		$view_comment = view(env('THEME').'.comments.new_comment')->with('data', $data)->render();
+		
 		//Возвращаем AJAX вывод шаблона  с данными
 		return \Response::json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
 		

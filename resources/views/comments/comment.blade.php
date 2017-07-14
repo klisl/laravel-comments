@@ -26,7 +26,7 @@
 	
 	@if(isset($com[$item->id]))
 	<ul class="children">
-		@include('comment', ['items' => $com[$item->id]])
+		@include('comments.comment', ['items' => $com[$item->id]])
 	</ul>
 	@endif
 	

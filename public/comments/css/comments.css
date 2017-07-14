@@ -1,0 +1,319 @@
+
+body{
+	max-width: 1000px;
+	margin: 0 auto;
+    background-color: #fff;
+}
+.commentlist group{
+	clear: both;
+    margin: 0 0 2em 0;
+    padding: 0;
+    list-style-type: none!important;
+	margin-left: 0 !important;
+}
+li, ul, ol {
+    color: #585555;
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+	color: #585555;
+    font-style: normal;
+}
+ol.commentlist, li.comment {
+    clear: both;
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style-type: none!important;
+}
+
+.comment-container {
+    /*padding: 5px;*/
+    border: 1px solid #CFCFCF;
+	margin-bottom: 1em;
+}
+.comment-author {
+    float: left;
+    margin: 25px 10px 0 15px;
+    max-width: 85px;
+}
+#comments .comment-author img {
+    border: 1px solid #CFCFCF;
+    padding: 3px;
+}
+#comments .fn {
+    font-style: normal;
+    text-align: center;
+    font-size: 90%;
+    margin: 10px 0 0 0;
+    display: block;
+}
+.intro {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+}
+.commentDate {
+    float: left;
+    margin: 0 0 0px 0;
+	color: #b77a2b;
+}
+.comment-meta {
+    margin: 0px 0 0px 120px;
+    padding: 15px 20px 10px 20px;
+    border-left: 1px solid #CFCFCF;
+    min-height: 125px;
+}
+
+
+
+.wrap_result {
+	background-color: #f0f2f0;
+	border: 2px solid #2C8DB8;
+	border-radius: 10px;
+	padding: 20px;
+	position: fixed;
+	left: 35%;
+	top:40%;
+	width:300px;
+	/*height: 80px;*/
+	text-align: center;
+	display: none;
+	z-index: 5005
+}
+
+.borGreen {
+	border: 2px solid green !important;
+}
+
+.commentlist .new_comment{
+	background-color: #DFF3EF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======= COMMENTS */
+h3#comments-title {
+	margin: 30px 0;
+	padding-left: 35px;
+	background: url('../images/icons/comment.png') no-repeat left center
+}
+h3#comments-title span {
+}
+.comment-container {
+	padding: 5px;
+	border: 1px solid #CFCFCF;
+}
+.comment-author {
+	float: left;
+	margin: 25px 10px 0 15px;
+	max-width: 85px;
+}
+.image-square-style #comments img.avatar {
+	border: 4px solid #CFCFCF;
+}
+.image-sphere-style #comments img.avatar {
+	border: 0;
+}
+#commentform img.avatar {
+	margin: 0;
+}
+#comments .fn {
+	font-style: normal;
+	text-align: center;
+	font-size: 90%;
+	margin: 10px 0 0 0;
+	display: block;
+}
+#comments .comment-author img {
+	border: 1px solid #CFCFCF;
+	padding: 3px;
+}
+.comment-meta .reply {
+	text-align: right;
+}
+.comment-meta {
+	margin: 1px 0 1px 120px;
+	padding: 20px 20px 10px 20px;
+	border-left: 1px solid #CFCFCF;
+	min-height: 145px;
+}
+.comment-metaTextarea {
+	position: relative;
+	margin: 0 0 15px 120px;
+	width: 422px;
+	padding: 20px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+em.moderation {
+	float: right;
+	clear: right;
+	font-size: 85%;
+}
+.contentMetaData {
+	width: 100%;
+	height: 30px;
+}
+.intro {
+	width: 100%;
+	height: 25px;
+	margin-bottom: 20px;
+}
+.commentNumber {
+	float: right;
+	font-size: 150%;
+	color: #bebcbd;
+}
+.commentDate {
+	float: left;
+	margin: 0 0 0px 0;
+}
+ol.commentlist {
+	margin-left: 0 !important;
+}
+ol.commentlist ol {
+	margin-left: 40px !important;
+}
+ol.commentlist, li.comment {
+	clear: both;
+	margin: 0 0 2em 0;
+	padding: 0;
+	list-style-type: none!important;
+}
+li.comment ul.children {
+	margin-left: 1em;
+}
+li.comment ul.children li {
+	margin: 20px 0 0 0;
+}
+.bypostauthor .comment-container, .bypostauthor .comment-container .children, .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .comment-container {
+	background-color: #f4f4f4;
+}
+.comment-container .children, .bypostauthor .children .comment-container, .bypostauthor .children .bypostauthor .children .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .comment-container, .bypostauthor .children .bypostauthor .children .bypostauthor .children .bypostauthor .children .comment-container {
+	background-color: #fff;
+}
+#trackbacks {
+	font-weight: normal;
+}
+ol.trackbacklist {
+	margin: 20px 35px;
+}
+ol.trackbacklist li {
+	padding: 10px 0;
+}
+#respond {
+	margin: 2em 0 1em;
+}
+h3#reply-title {
+	padding-left: 35px;
+	background: url('../images/icons/leave-comment.png') no-repeat left center;
+	line-height: 27px;
+}
+#respond input {
+	width: 92%;
+	padding: 9px;
+	margin: 0;
+	border: 1px solid #CFCFCF;
+	background-color: #fff;
+}
+#respond input:focus, #respond textarea:focus {
+	background-color: #f7f7f7;
+}
+#respond textarea {
+	width: 97.5%;
+	border: 1px solid #CFCFCF;
+	background-color: #fff;
+	height: 135px;
+	padding: 10px;
+	font-family: inherit;
+}
+.sidebar-no #respond textarea {
+	width: 98.2%;
+}
+#respond #submit {
+	background: url("../images/input_pattern.png") repeat-x scroll 0 0 #F3F0F0;
+	color: #4C4B4B;
+	float: right;
+	font-size: .7em!important;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	width: 130px;
+	margin: 0 0 20px;
+	padding: 8px;
+}
+#respond #submit:hover {
+	background: url("../images/input_pattern_hover.png") repeat-x scroll 0 6px #F3F0F0;
+	cursor: pointer;
+	color: #000
+}
+#respond .containerPost {
+	font-size: 1.1em
+}
+img.comment-avatar {
+	margin: 20px 0 0 0;
+	border: 1px solid #CFCFCF;
+	padding: 3px
+}
+#commentform {
+}
+#respond label {
+	/*width: 101.5px;*/
+	clear: left;
+	display: block;
+	float: left;
+	font-size: 1em;
+	line-height: 40px;
+	margin: 0;
+	text-align: left;
+	vertical-align: middle;
+}
+#respond p {
+	padding: 10px 0 0px;
+	margin-bottom: 0;
+	float: left;
+	/* width: 32%; */
+	margin-right: 2%;
+}
+#respond p.comment-form-comment {
+	width: 100%;
+}
+#respond p.comment-form-url {
+	margin-right: 0;
+}
+#respond p.form-submit {
+	border-bottom: none;
+	width: 100%;
+}
+#respond p.subscribe-to-comments {
+	width: 100%;
+}
+#respond p.comment-form-author label, #respond p.comment-form-email label, #respond p.comment-form-url label {
+	height: 38px;
+}
+#respond h3{
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+/*---*/
+
+
+
+
+
+
+
+
+
+
+

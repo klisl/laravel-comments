@@ -3,13 +3,13 @@
 	<ol class="commentlist group">
 		@if($com)
 		@foreach($com as $k => $comments)
-			<!--Выводим только родительские комментарии parent_id = 0-->
-			
+	
+			<!--Выводим только родительские комментарии parent_id = 0-->			
 			@if($k)
 				@break
 			@endif
 
-			@include('comment', ['items' => $comments])
+			@include('comments.comment', ['items' => $comments])
 
 		@endforeach
 		@endif

@@ -1,51 +1,43 @@
 <?php
 
-namespace Klisl\Widgets;
+namespace Klisl\Comments;
 
 use Illuminate\Support\ServiceProvider;
-use App;
-use Blade;
+use Route;
 
 
-class WidgetServiceProvider extends ServiceProvider
+class CommentsServiceProvider extends ServiceProvider
 {
 
 	
     public function boot()
     {
-			
-		//Указываем, что файлы из папки config должны быть опубликованы при установке
-        $this->publishes([__DIR__ . '/../config/' => config_path() . '/']);
+		/*
+		 * Маршрут обрабатывающий POST запрос отправляемый формой с помощью AJAX
+		 */
+		Route::post('comment', ['uses' => 'App\Http\Controllers\CommentController@store', 'as' => 'comment']);
+				
+				
+		//Публикуем конфигурационный файл (config/comments.php)	
+        $this->publishes([__DIR__ . '/../config/' => config_path()]);
 		
-		//Так же публикуем тестовый виджет с каталогом для пользовательских виджетов
-		$this->publishes([__DIR__ . '/../app/' => app_path() . '/']);
+		//Публикуем CommentController и модель Comment
+		$this->publishes([__DIR__ . '/../app/' => app_path()]);
 
+		//Публикуем миграции
+		$this->publishes([__DIR__ . '/../database/' => database_path()]);
 		
-		/*
-		 * Регистрируется директива для шаблонизатора Blade
-		 * Пример обращения к виджету: @widget('menu')
-		 * Можно передать параметры в виджет:
-		 * @widget('menu', [$data1,$data2...])
-		 */
-		Blade::directive('widget', function ($name) {			
-			return "<?php echo app('widget')->show($name); ?>";
-		});
+		//Публикуем стили и скрипты
+		$this->publishes([__DIR__ . '/../public/' => public_path()]);
 		
-		/*
-		 * Регистрируется (добавляем) каталог для хранения шаблонов виджетов
-		 * app\Widgets\view
-		 */
-        $this->loadViewsFrom(app_path() .'/Widgets/views', 'Widgets');
+		//Публикуем шаблоны и языковой файл
+		$this->publishes([__DIR__ . '/../resources/' => resource_path()]);
 		
     }
 
 	
     public function register()
     {
-
-		App::singleton('widget', function(){
-			return new \Klisl\Widgets\Widget();
-		});
 
 	}
 
