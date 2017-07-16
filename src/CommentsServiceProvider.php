@@ -3,6 +3,7 @@
 namespace Klisl\Comments;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 use Route;
 
 
@@ -33,6 +34,8 @@ class CommentsServiceProvider extends ServiceProvider
 		//Публикуем шаблоны и языковой файл
 		$this->publishes([__DIR__ . '/../resources/' => resource_path()]);
 		
+		
+		Schema::defaultStringLength(191);
     }
 
 	
