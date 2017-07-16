@@ -94,9 +94,13 @@ php artisan db:seed --class=TestCommentsSeeder
 ```
 
 Весь код тщательно прокомментирован. 
-Контроллер, обрабатывающий данные по добавлению комментариев, доступен для редактирования в файле app\Http\Controllers\CommentController.php. 
-Файл отправляющий запрос с помощью AJAX на сервер и отвечающий за вывод всплывающих окон с уведомлениями - public\comments\js\comment-scripts.js
-Настройка стилей блока комментариев осуществляется в файле public\comments\css\comments.css
+
+Контроллер, обрабатывающий данные по добавлению комментариев, доступен для редактирования в файле `app\Http\Controllers\CommentController.php`. 
+
+Файл отправляющий запрос с помощью AJAX на сервер и отвечающий за вывод всплывающих окон с уведомлениями - `public\comments\js\comment-scripts.js`.
+
+Настройка стилей блока комментариев осуществляется в файле `public\comments\css\comments.css`.
+
 
 ![enter image description here](http://klisl.com/frontend/web/images/external/laravel_comments.jpg)
 
