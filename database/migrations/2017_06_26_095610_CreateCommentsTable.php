@@ -13,7 +13,8 @@ class CreateCommentsTable extends Migration
 			$table->string('name');
 			$table->string('email');
 			$table->text('text');
-			$table->integer('parent_id')->nullable(); //разрешаем null;		
+			$table->integer('parent_id')->nullable(); //разрешаем null;	
+			$table->boolean('status')->default(config('comments.show_immediately')); 
             $table->timestamps();
         });
     }

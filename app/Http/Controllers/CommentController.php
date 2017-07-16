@@ -24,6 +24,8 @@ class CommentController extends Controller
 		$data['post_id'] = $request->input('comment_post_ID');
 		$data['parent_id'] = $request->input('comment_parent');
 		
+		//устанавливаем статус в зависимости от настройки
+		$data['status'] = config('comments.show_immediately');
 		
 		/*
 		 * Если активен аутентифицированный пользователь
@@ -77,9 +79,9 @@ class CommentController extends Controller
 		 * Формируем массив данных для вывода нового комментария с помощью AJAX
 		 * сразу после его добавления (без перезагрузки)
 		 */
-		$comment->load('user');
 		$data['id'] = $comment->id;
 		$data['hash'] = md5($data['email']);
+		$data['status'] = config('comments.show_immediately');
 		
 		//Вывод шаблона сохраняем в переменную
 		$view_comment = view(env('THEME').'.comments.new_comment')->with('data', $data)->render();

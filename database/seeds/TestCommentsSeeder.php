@@ -11,11 +11,11 @@ class TestCommentsSeeder extends Seeder
 		Comment::create(
 		[	
 			'id'=>'1',
-			'name'=>'Саша',
-			'email'=>'sasha@mail.ru',
-			'text'=>'Текст Саши',
+			'name'=>'Сергей',
+			'email'=>'ksl1980@mail.ru',
+			'text'=>'Текст WEB-программиста Сергея',
 			'created_at'=>'2017-07-02 14:36:33',
-			'post_id'=>'1'
+			'post_id'=>config('comments.key_id')
 		]);
 
 	
@@ -25,7 +25,7 @@ class TestCommentsSeeder extends Seeder
 			'email'=>'dasha@mail.ru',
 			'text'=>'Текст Даши',
 			'created_at'=>'2017-07-08 19:58:15',
-			'post_id'=>'1'
+			'post_id'=>config('comments.key_id')
 		]);
 		
 		
@@ -36,7 +36,7 @@ class TestCommentsSeeder extends Seeder
 			'text'=>'Текст Васи',
 			'parent_id'=>'1',
 			'created_at'=>'2017-07-14 11:26:14',
-			'post_id'=>'1'
+			'post_id'=>config('comments.key_id')
 		]);
     }
 }

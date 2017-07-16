@@ -220,11 +220,12 @@ h3#reply-title {
 	line-height: 27px;
 }
 #respond input {
-	width: 92%;
+	width: 85%;
 	padding: 9px;
 	margin: 0;
 	border: 1px solid #CFCFCF;
 	background-color: #fff;
+	margin-left: 10px;
 }
 #respond input:focus, #respond textarea:focus {
 	background-color: #f7f7f7;

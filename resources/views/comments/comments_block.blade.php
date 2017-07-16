@@ -1,10 +1,28 @@
+@php
+
+	if($essence){
+		$comments = $essence->comments;
+
+		/*
+		 * Группируем комментарии по полю parent_id. При этом данное поле становится ключами массива 
+		 * коллекций содержащих модели комментариев
+		 */
+		$com = $comments->where('status', 1)->groupBy('parent_id');
+	} else $com = null;
+
+@endphp
+
+<!--Блок для вывода сообщения про отправку комментария-->
+<div class="wrap_result"></div>
+
+
 <div id="comments">
 
 	<ol class="commentlist group">
 		@if($com)
 		@foreach($com as $k => $comments)
-	
-			<!--Выводим только родительские комментарии parent_id = 0-->			
+			<!--Выводим только родительские комментарии parent_id = 0-->
+			
 			@if($k)
 				@break
 			@endif
@@ -38,4 +56,5 @@
 		</form>
 	</div>
 	
+</div>
 </div>

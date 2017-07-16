@@ -13,10 +13,13 @@ class ChangeCommentsTable extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {	
-			$table->integer('post_id')->unsigned();		
-			$table->foreign('post_id')->references('id')->on('posts');			
-			$table->integer('user_id')->unsigned()->nullable();	//разрешаем null		
-			$table->foreign('user_id')->references('id')->on('users');
+			$table->integer(config('comments.key_field'))->unsigned();		
+			$table->foreign(config('comments.key_field'))->references('id')->on(config('comments.key_table'));	
+			
+			if(config('comments.user')){
+				$table->integer('user_id')->unsigned()->nullable();	//разрешаем null		
+				$table->foreign('user_id')->references('id')->on('users');
+			}
         });
     }
 
