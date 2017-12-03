@@ -19,6 +19,13 @@
 	"require": {
         "php": ">=5.4.0"
     },
+	"extra": {
+      "laravel": {
+        "providers": [
+          "Klisl\\Comments\\CommentsServiceProvider"
+        ]
+      }
+    },
     "autoload": {
         "psr-4": {
 			"Klisl\\Comments\\": "src"

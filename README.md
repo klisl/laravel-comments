@@ -1,6 +1,6 @@
 laravel-widgets
 =================
-[![Laravel 5.4](https://img.shields.io/badge/Laravel-5.4-orange.svg?style=flat-square)](http://laravel.com)
+[![Laravel 5](https://img.shields.io/badge/Laravel-5-orange.svg?style=flat-square)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://tldrlegal.com/license/mit-license)
 
 Пакет для создания блока комментариев в Laravel-5.
@@ -24,11 +24,12 @@ laravel-widgets
 composer require klisl/laravel-comments
 ```
 
-По завершении этой операции, добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
+Если версия Laravel ниже чем 5.5 - добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
 
 ```php
 Klisl\Comments\CommentsServiceProvider::class,
 ```
+Для версии >=5.5 данный шаг пропустить.
 
 После этого выполните в консоли команду публикации нужных ресурсов:
 ```
