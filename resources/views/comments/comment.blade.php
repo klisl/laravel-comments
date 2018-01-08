@@ -6,7 +6,7 @@
 			<img alt="" src="https://www.gravatar.com/avatar/{{md5($item->email)}}?d=mm&s=75" class="avatar" height="75" width="75" />
 			<cite class="fn">{{$item->name}}</cite>                 
 		</div>
-		<!-- .comment-author .vcard -->
+
 		<div class="comment-meta commentmetadata">
 			<div class="intro">
 				<div class="commentDate">
