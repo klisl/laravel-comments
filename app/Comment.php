@@ -6,27 +6,32 @@ use Illuminate\Database\Eloquent\Model;
 use App\Post;
 use App\User;
 
+/**
+ * Class Comment
+ */
 class Comment extends Model
 {
-	
-	protected $guarded = [];
+    /**
+     * @var array
+     */
+    protected $guarded = [];
 
     /**
      * Связь с моделью Post
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function post()
-	{
-		return $this->belongsTo(Post::class);
-	}
+    {
+        return $this->belongsTo(Post::class);
+    }
 
     /**
      * Связь с моделью User
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-	public function user()
-	{
-		return $this->belongsTo(User::class);
-	}
-	
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

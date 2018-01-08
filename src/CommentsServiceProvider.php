@@ -6,11 +6,15 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Route;
 
-
+/**
+ * Class CommentsServiceProvider
+ * @author Sergey <ksl80@ukr.net>
+ * @package Klisl\Comments
+ */
 class CommentsServiceProvider extends ServiceProvider
 {
 
-	
+    /** @return void */
     public function boot()
     {
 		/*

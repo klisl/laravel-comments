@@ -14,8 +14,9 @@ class CommentController extends Controller
 
     /**
      * Обработка формы - AJAX
+     *
      * @param Request $request
-     * @return mixed
+     * @return \Illuminate\Http\JsonResponse
      */
 	public function store(Request $request)
     {
@@ -49,7 +50,7 @@ class CommentController extends Controller
 
 
 		if ($validator->fails()) {
-			return \Response::json(['error'=>$validator->errors()->all()]);
+			return response()->json(['error'=>$validator->errors()->all()]);
 		}
 		
 
