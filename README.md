@@ -103,7 +103,7 @@ php artisan db:seed --class=TestCommentsSeeder
 Настройка стилей блока комментариев осуществляется в файле `public\comments\css\comments.css`.
 
 
-![enter image description here](http://klisl.com/frontend/web/images/external/laravel_comments.jpg)
+![enter image description here](https://klisl.com/frontend/web/images/external/laravel_comments.jpg)
 
 
 Мой блог: [klisl.com](https://klisl.com)  
