@@ -106,4 +106,4 @@ php artisan db:seed --class=TestCommentsSeeder
 ![enter image description here](http://klisl.com/frontend/web/images/external/laravel_comments.jpg)
 
 
-Мой блог: [klisl.com](http://klisl.com)  
+Мой блог: [klisl.com](https://klisl.com)  
