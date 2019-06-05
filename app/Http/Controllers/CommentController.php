@@ -45,28 +45,22 @@ class CommentController extends Controller
 			'name' => 'required',
 			'email' => 'required|email',
 		]);
-
-		$comment = new Comment($data); 
-
-
 		if ($validator->fails()) {
 			return response()->json(['error'=>$validator->errors()->all()]);
 		}
 		
+		$comment = new Comment($data); 
 
 		$post = Post::find($data['post_id']);
-
 		$post->comments()->save($comment);
 		
-
 		$data['id'] = $comment->id;
 		$data['hash'] = md5($data['email']);
 		$data['status'] = config('comments.show_immediately');
 		
-
 		$view_comment = view(env('THEME').'.comments.new_comment')->with('data', $data)->render();
 
-        return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
+    return response()->json(['success'=>true, 'comment'=>$view_comment, 'data'=>$data]);
 
 	}
 }
