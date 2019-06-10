@@ -11,6 +11,10 @@ use App\Post;
 
 class CommentController extends Controller
 {
+		public function __construct()
+    {
+        $this->middleware('web');
+    }
 
     /**
      * Обработка формы - AJAX
@@ -21,10 +25,11 @@ class CommentController extends Controller
 	public function store(Request $request)
     {
 
-		$data = $request->except('_token', 'comment_post_ID', 'comment_parent');
+		$data = $request->except('_token', 'comment_post_ID', 'comment_parent', 'submit');
 		
 		//добавляем поля с названиями как в таблице (модели)
-		$data['post_id'] = $request->input('comment_post_ID');
+		$key_field = config('comments.key_field');
+		$data[$key_field] = $request->input('comment_post_ID');
 		$data['parent_id'] = $request->input('comment_parent');
 		
 		//устанавливаем статус в зависимости от настройки
@@ -40,7 +45,7 @@ class CommentController extends Controller
 		}
 
 		$validator = Validator::make($data,[
-			'post_id' => 'integer|required',
+			$key_field => 'integer|required',
 			'text' => 'required',
 			'name' => 'required',
 			'email' => 'required|email',
@@ -51,7 +56,7 @@ class CommentController extends Controller
 		
 		$comment = new Comment($data); 
 
-		$post = Post::find($data['post_id']);
+		$post = Post::find($data[$key_field]);
 		$post->comments()->save($comment);
 		
 		$data['id'] = $comment->id;

@@ -20,11 +20,11 @@ class CommentsServiceProvider extends ServiceProvider
 		/*
 		 * Маршрут обрабатывающий POST запрос отправляемый формой с помощью AJAX
 		 */
-		Route::post('/comment', ['uses' => 'App\Http\Controllers\CommentController@store', 'as' => 'comment'])->middleware('web');
+		Route::post('/comment', ['uses' => 'App\Http\Controllers\CommentController@store', 'as' => 'comment']);
 				
 				
 		//Публикуем
-        $this->publishes([__DIR__ . '/../config/' => config_path()]);
+    $this->publishes([__DIR__ . '/../config/' => config_path()]);
 
 		$this->publishes([__DIR__ . '/../app/' => app_path()]);
 
@@ -42,6 +42,6 @@ class CommentsServiceProvider extends ServiceProvider
     public function register()
     {
 
-	}
+		}
 
 }
