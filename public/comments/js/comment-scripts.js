@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 		wrap_result.html('<strong>Отправка</strong>')
             .css({'color':'green'})
             //плавное появление блока
-            .fadeIn(500, function(){
+            .fadeIn(300, function(){
                 //получение данных из формы
                 var data = $('#commentform').serializeArray();
 
@@ -34,10 +34,10 @@ jQuery(document).ready(function($){
                                                                                                             
                         if(html.success){
                             wrap_result.append('<br><strong>Сохранено!</strong><br>')
-                                .delay(2000) //скрываем через 2 сек
+                                .delay(1000) //скрываем через 1 сек
 
                                 //Через пол секунды убрать окно и выполнить функцию
-                                .fadeOut(500, function(){
+                                .fadeOut(300, function(){
                                     
                                     $('input#name, input#email, textarea#comment').val(''); //очищаем поля формы
                                     
@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
                                     if(html.data.status == false) {
 
                                         wrap_result.html('<strong>Комментарий появится после проверки администратором</strong><br>').show(500);                                           
-                                        setTimeout(function() { wrap_result.hide('slow'); }, 3000); //скрываем через 3 сек   
+                                        setTimeout(function() { wrap_result.hide('slow'); }, 1000); //скрываем через 1 сек
 
                                         //имитируем нажатие кнопки отмены ответа на комментарий для возврата формы вниз
                                         $('#cancel-comment-reply-link').click();                                           
@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
                                     }
 
                                     //если это дочерний комментарий
-                                    if(html.data.parent_id >0){
+                                    if(html.data.parent_id > 0){
                                         //получаем элемент предыдущий перед формой добавления комментария
                                         comParent.parents('div#respond').prev()
                                         //вставляем после него результат вывода шаблона
@@ -66,7 +66,8 @@ jQuery(document).ready(function($){
                                             $('ol.commentlist').append(html.comment);
                                         //самый первый комментарий
                                         } else {
-                                            $('#respond').before('<div id="comments"><ol class="commentlist group">' + html.comment + '</ol></div>');
+                                            $('#respond').before('<div id="comments"><ol class="commentlist group">'
+                                            + html.comment + '</ol></div>');
                                         }
                                     }
 
@@ -78,14 +79,14 @@ jQuery(document).ready(function($){
                         //Если ошибка
                         } else {
                              $('.wrap_result').css('color', 'red').append('<br><strong>Ошибка: </strong>' + html.error.join('<br>'))
-                             $('.wrap_result').delay(3000).fadeOut(1000);
+                             $('.wrap_result').delay(1000).fadeOut(500);
                         }
                     },
 
                     //Ошибка AJAX
                     error: function(){
                         $('.wrap_result').css('color', 'red').append('<br><strong>Ошибка!</strong>');
-                        $('.wrap_result').delay(2000).fadeOut(500, function(){
+                        $('.wrap_result').delay(1000).fadeOut(500, function(){
                             //имитируем нажатие кнопки отмены ответа на комментарий для возврата формы вниз
                             $('#cancel-comment-reply-link').click();
                         });

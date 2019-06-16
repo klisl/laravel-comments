@@ -11,7 +11,8 @@ use App\Post;
 
 class CommentController extends Controller
 {
-		public function __construct()
+
+    public function __construct()
     {
         $this->middleware('web');
     }

@@ -1,5 +1,5 @@
 {
-    "name": "klisl/laravel-comments",
+    "name": "facecode/laravel-comments",
     "description": "Package for using comments in Laravel-5",
 	"type": "library",
 	"keywords": [
@@ -17,7 +17,7 @@
     ],
 	"minimum-stability": "stable",
 	"require": {
-        "php": ">=5.4.0"
+        "php": ">=5.5.0"
     },
 	"extra": {
       "laravel": {

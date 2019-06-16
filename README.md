@@ -20,8 +20,18 @@ laravel-widgets
 ------------------
 Установка пакета с помощью Composer.
 
+добавить в composer.json:
 ```
-composer require klisl/laravel-comments
+"repositories": [
+    	{
+          "type": "git",
+          "url": "https://github.com/0xFACEC0DE/laravel-comments.git"
+        }
+]        
+```
+далее
+```
+composer require facecode/laravel-comments
 ```
 
 Если версия Laravel ниже чем 5.5 - добавьте в файл `config/app.php` вашего проекта в конец массива `providers` :
